@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ночь в музее — конструктор посещения</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Афиша / особый вечер</p>
+
+    <article class="event-card" aria-labelledby="event-title">
+      <p class="event-category">Искусство смотреть дальше</p>
+      <h1 id="event-title">Ночь в музее</h1>
+      <p id="event-date" class="event-date">15 ноября, 18:30</p>
+      <p id="event-place">Музей космонавтики, проспект Мира, 111</p>
+      <p id="event-description" class="event-description">Вечерняя программа с выставкой и экскурсиями</p>
+      <button id="show-program" class="program-button" type="button" aria-controls="program" aria-expanded="false">Показать программу</button>
+      <p id="program" class="program" hidden></p>
+    </article>
+
+    <p id="data-error" class="error" role="alert" hidden></p>
+
+    <form id="service-form" class="service-form" hidden>
+      <p class="eyebrow">Ваш вечер</p>
+      <h2>Добавьте впечатления</h2>
+      <p class="form-description">Выберите дополнительные услуги и рассчитайте их стоимость.</p>
+
+      <fieldset>
+        <legend>Услуги</legend>
+        <label class="service-option" for="guide">
+          <input id="guide" type="checkbox" name="services" value="guide">
+          <span id="guide-title">Экскурсия с гидом</span>
+          <span id="guide-price" class="service-price">500 руб.</span>
+        </label>
+        <label class="service-option" for="audio">
+          <input id="audio" type="checkbox" name="services" value="audio">
+          <span id="audio-title">Аудиогид</span>
+          <span id="audio-price" class="service-price">350 руб.</span>
+        </label>
+        <label class="service-option" for="catalog">
+          <input id="catalog" type="checkbox" name="services" value="catalog">
+          <span id="catalog-title">Каталог выставки</span>
+          <span id="catalog-price" class="service-price">250 руб.</span>
+        </label>
+      </fieldset>
+
+      <p id="choice-error" class="error" role="alert" hidden></p>
+      <button class="calculate-button" type="submit">Рассчитать стоимость</button>
+    </form>
+
+    <div id="result" class="result" role="status" hidden></div>
+    <pre id="report-json" class="report-json" aria-label="Отчёт в формате JSON" hidden></pre>
+    <p class="page-note">Один вечер. Несколько способов узнать больше.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
